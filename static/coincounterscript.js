@@ -44,6 +44,47 @@ document.querySelectorAll('input').forEach(function (evt) {
     })
 });
 
+let allkinds = coinkinds.concat(billkinds)
 document.querySelector("#submitbtn").addEventListener('click',function(){
     this.form.submit();
+    //Cookie削除
+    let tabs="r"
+    for (let a1 in allkinds){
+        let key = "#" + tabs  + allkinds[a1];
+        Cookies.remove(key, { path: '' })
+    }
+    
 },false);
+
+var saveregival = function(){
+    let tabs="r"
+    for (let a1 in allkinds){
+        let key = "#" + tabs  + allkinds[a1];
+        let val = document.querySelector(key).value
+        Cookies.set(key,val);
+    }
+}
+var loadsetregival = function(){
+    let tabs="r"
+    for (let a1 in allkinds){
+        let key = "#" + tabs  + allkinds[a1];
+        let val = parseInt(Cookies.get(key));
+        if (!isNaN(val)){
+            document.querySelector(key).value = val;
+        }
+    }
+
+}
+//初回読み込み時にcookieを返す
+loadsetregival()
+
+document.querySelector('[data-bs-toggle="tab"]').addEventListener('hide.bs.tab',function(event){
+    if(event.target.id == "regitab"){
+        saveregival();
+    }
+});
+document.querySelector('[data-bs-toggle="tab"]').addEventListener('show.bs.tab',function(event){
+    if(event.target.id == "regitab"){
+        loadsetregival()
+    }
+});

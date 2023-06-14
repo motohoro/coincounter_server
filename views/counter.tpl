@@ -17,10 +17,10 @@
     <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="#REGI" data-bs-toggle="tab">REGI</a>
+                <a class="nav-link active" id="regitab" href="#REGI" data-bs-toggle="tab">REGI</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#CBOX" data-bs-toggle="tab">CASHBOX</a>
+                <a class="nav-link" id="cboxtab" href="#CBOX" data-bs-toggle="tab">CASHBOX</a>
             </li>
         </ul>
         % coinkinds = [1,5,10,50,100,500]
@@ -177,6 +177,7 @@
         var coinkinds = {{ coinkinds }};
         var billkinds = {{ billkinds }};
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js" integrity="sha256-WCzAhd2P6gRJF9Hv3oOOd+hFJi/QJbv+Azn4CGB8gfY=" crossorigin="anonymous"></script>
     <script src="/static/coincounterscript.js?{{timestamp}}"></script>
 </body>
 

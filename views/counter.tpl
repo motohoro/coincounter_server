@@ -29,129 +29,135 @@
             <div class="tab-content">
                 <div id="REGI" class="tab-pane active">
                     <h2>regi</h2>
-                    <table class="table">
-                        <tbody>
-                            % for ckinds in coinkinds: ##[1,5,10,50,100,500]:
-                            <tr>
-                                <td><label for="r{{ckinds}}">{{ckinds}}円✕</label></td>
-                                <td><input type="number" name="r{{ckinds}}" id="r{{ckinds}}" min="0"></td>
-                                <td>=</td>
-                                <td><label for="r{{ckinds}}" id="rresult{{ckinds}}"></td>
-                            </tr>
-                            % end
-                            <tr>
-                                <td>硬貨計</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="rcoinsum" /></td>
-                            </tr>
+                    <div class="container-fluid">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:25%"></th>
+                                    <th style="width:25%"></th>
+                                    <th style="width:10%"></th>
+                                    <th style="width:40%"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                % for ckinds in coinkinds: ##[1,5,10,50,100,500]:
+                                <tr>
+                                    <td><label for="r{{ckinds}}">{{ckinds}}円✕</label></td>
+                                    <td><input type="number" name="r{{ckinds}}" id="r{{ckinds}}" min="0"></td>
+                                    <td>=</td>
+                                    <td><label for="r{{ckinds}}" id="rresult{{ckinds}}"></td>
+                                </tr>
+                                % end
+                                <tr>
+                                    <td>硬貨計</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="rcoinsum" /></td>
+                                </tr>
 
-                            % for ckinds in billkinds: #[10000,5000,2000,1000]:
-                            <tr>
-                                <td><label for="r{{ckinds}}">{{ckinds}}円✕</label></td>
-                                <td><input type="number" name="r{{ckinds}}" id="r{{ckinds}}" min="0"></td>
-                                <td>=</td>
-                                <td><label for="r{{ckinds}}" id="rresult{{ckinds}}"></td>
-                            </tr>
-                            % end
-                            <tr>
-                                <td>紙幣計</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="rbillsum" /></td>
-                            </tr>
-                            <tr>
-                                <td>合計</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="rallsum" /></td>
-                            </tr>
-                            <tr>
-                                <td>実質売上高</td>
-                                <td></td>
-                                <td><span id="rcalcs">-30000</span></td>
-                                <td><span id="rrealsum" /></span></td>
-                            </tr>
-                            <tr>
-                                <td>精算売上高</td>
-                                <td></td>
-                                <td></td>
-                                <td><input id="ridealsum" name="ridealsum"/></td>
-                            </tr>
-                            <tr>
-                                <td>誤差</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="rmarginerror" /></span></td>
-                            </tr>
+                                % for ckinds in billkinds: #[10000,5000,2000,1000]:
+                                <tr>
+                                    <td><label for="r{{ckinds}}">{{ckinds}}円✕</label></td>
+                                    <td><input type="number" name="r{{ckinds}}" id="r{{ckinds}}" min="0"></td>
+                                    <td>=</td>
+                                    <td><label for="r{{ckinds}}" id="rresult{{ckinds}}"></td>
+                                </tr>
+                                % end
+                                <tr>
+                                    <td>紙幣計</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="rbillsum" /></td>
+                                </tr>
+                                <tr>
+                                    <td>合計</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="rallsum" /></td>
+                                </tr>
+                                <tr>
+                                    <td>実質売上高</td>
+                                    <td><span id="rcalcs">-30000</span></td>
+                                    <td colspan="2"><span id="rrealsum" /></span></td>
+                                </tr>
+                                <tr>
+                                    <td>精算売上高</td>
+                                    <td colspan="2"><input id="ridealsum" name="ridealsum" /></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>誤差</td>
+                                    <td colspan="2"><span id="rmarginerror" /></span></td>
+                                    <td></td>
+                                </tr>
 
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div id="CBOX" class="tab-pane">
                     <h2>cbox</h2>
-                    <table class="table">
-                        <tbody>
-                            % for ckinds in coinkinds: #[1,5,10,50,100,500]:
-                            <tr>
-                                <td><label for="c{{ckinds}}">{{ckinds}}円✕</label></td>
-                                <td><input type="number" name="c{{ckinds}}" id="c{{ckinds}}" min="0"></td>
-                                <td>=</td>
-                                <td><label for="c{{ckinds}}" id="cresult{{ckinds}}"></td>
-                            </tr>
-                            % end
-                            <tr>
-                                <td>硬貨計</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="ccoinsum" /></td>
-                            </tr>
+                    <div class="container-fluid">
+                        <table class="table">
+                            <tbody>
+                                % for ckinds in coinkinds: #[1,5,10,50,100,500]:
+                                <tr>
+                                    <td><label for="c{{ckinds}}">{{ckinds}}円✕</label></td>
+                                    <td><input type="number" name="c{{ckinds}}" id="c{{ckinds}}" min="0"></td>
+                                    <td>=</td>
+                                    <td><label for="c{{ckinds}}" id="cresult{{ckinds}}"></td>
+                                </tr>
+                                % end
+                                <tr>
+                                    <td>硬貨計</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="ccoinsum" /></td>
+                                </tr>
 
-                            % for ckinds in billkinds: #[10000,5000,2000,1000]:
-                            <tr>
-                                <td><label for="c{{ckinds}}">{{ckinds}}円✕</label></td>
-                                <td><input type="number" name="c{{ckinds}}" id="c{{ckinds}}" min="0"></td>
-                                <td>=</td>
-                                <td><label for="c{{ckinds}}" id="cresult{{ckinds}}"></td>
-                            </tr>
-                            % end
-                            <tr>
-                                <td>紙幣計</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="cbillsum" /></td>
-                            </tr>
-                            <tr>
-                                <td>合計</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="callsum" ></span></td>
-                            </tr>
-                            <tr>
-                                <td>実質残高</td>
-                                <td></td>
-                                <td><span id="ccalcs">30000</span> </td>
-                                <td><span id="crealsum" ></span></td>
-                            </tr>
-                            <tr>
-                                <td>理想集計</td>
-                                <td></td>
-                                <td></td>
-                                <td><input id="cidealsum" name="cidealsum" /></td>
-                            </tr>
-                            <tr>
-                                <td>誤差</td>
-                                <td></td>
-                                <td></td>
-                                <td><span id="cmarginerror" /></span></td>
-                            </tr>
+                                % for ckinds in billkinds: #[10000,5000,2000,1000]:
+                                <tr>
+                                    <td><label for="c{{ckinds}}">{{ckinds}}円✕</label></td>
+                                    <td><input type="number" name="c{{ckinds}}" id="c{{ckinds}}" min="0"></td>
+                                    <td>=</td>
+                                    <td><label for="c{{ckinds}}" id="cresult{{ckinds}}"></td>
+                                </tr>
+                                % end
+                                <tr>
+                                    <td>紙幣計</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="cbillsum" /></td>
+                                </tr>
+                                <tr>
+                                    <td>合計</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="callsum"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>実質残高</td>
+                                    <td><span id="ccalcs">30000</span> </td>
+                                    <td colspan="2"><span id="crealsum"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>理想集計</td>
+                                    <td colspan="2"><input id="cidealsum" name="cidealsum" /></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>誤差</td>
+                                    <td colspan="2"><span id="cmarginerror" /></span></td>
+                                    <td></td>
+                                </tr>
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <input class="btn btn-primary" type="submit" value="印刷">
+            <button class="btn btn-primary" id="submitbtn" type="button">印刷</button>
         </form>
     </div>
 
@@ -169,9 +175,9 @@
     -->
     <script>
         var coinkinds = {{ coinkinds }};
-        var billkinds = {{billkinds}};
+        var billkinds = {{ billkinds }};
     </script>
-    <script src="/static/myscript.js"></script>
+    <script src="/static/myscript.js?{{timestamp}}"></script>
 </body>
 
 </html>

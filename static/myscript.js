@@ -43,3 +43,7 @@ document.querySelectorAll('input').forEach(function (evt) {
 
     })
 });
+
+document.querySelector("#submitbtn").addEventListener('click',function(){
+    this.form.submit();
+},false);

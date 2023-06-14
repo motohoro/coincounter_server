@@ -177,7 +177,7 @@
         var coinkinds = {{ coinkinds }};
         var billkinds = {{ billkinds }};
     </script>
-    <script src="/static/myscript.js?{{timestamp}}"></script>
+    <script src="/static/coincounterscript.js?{{timestamp}}"></script>
 </body>
 
 </html>

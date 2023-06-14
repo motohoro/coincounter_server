@@ -1,10 +1,11 @@
 from bottle import route,post,template,response,request,static_file,redirect ,run
-import win32api
 import openpyxl
+import subprocess
+import time
 
 @route('/')
 def index():
-    return template('counter')
+    return template('counter',timestamp=time.time_ns())
 
 @route('/static/<filename>')
 def server_static(filename):
@@ -69,9 +70,11 @@ def printcoincounter():
 
 
     wb.save("result.xlsx")
-
-    win32api.ShellExecute(0,"print","result.xlsx",None,".",0)
+    
+##    win32api.ShellExecute(0,"print","result.xlsx","/c:""%s" % win32print.GetDefaultPrinter(),".",0)
+    subprocess.Popen(["start","","result.xlsx"],shell=True)
 
     return "作成終了"
 
-run(host='localhost',port=8080,debug=True,reloader=True)
+#run(host='localhost',port=8080,debug=True,reloader=True)
+run(host="0.0.0.0",port=8080,debug=True,reloader=True)

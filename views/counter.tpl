@@ -82,7 +82,7 @@
                                 </tr>
                                 <tr>
                                     <td>精算売上高</td>
-                                    <td colspan="2"><input id="ridealsum" name="ridealsum" /></td>
+                                    <td colspan="2"><input type="number" id="ridealsum" name="ridealsum" /></td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -143,7 +143,7 @@
                                 </tr>
                                 <tr>
                                     <td>理想集計</td>
-                                    <td colspan="2"><input id="cidealsum" name="cidealsum" /></td>
+                                    <td colspan="2"><input type="number" id="cidealsum" name="cidealsum" /></td>
                                     <td></td>
                                 </tr>
                                 <tr>
